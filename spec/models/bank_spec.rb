@@ -1,18 +1,20 @@
 # spec/models/bank_spec.rb
 
+require 'rails_helper'
+
 RSpec.describe Bank, type: :model do
-  it "es válido con un nombre de banco válido" do
+  it "is valid with a valid bank name" do
     bank = Bank.new(name: "Banco Ejemplo")
     expect(bank).to be_valid
   end
 
-  it "no es válido sin un nombre de banco" do
+  it "not valid without a bank name" do
     bank = Bank.new(name: nil)
     expect(bank).not_to be_valid
   end
 
-  it "no es válido con un nombre de banco demasiado largo" do
-    bank = Bank.new(name: "Banco con un nombre extremadamente largo que supera los 50 caracteres permitidos")
+  it "not valid with a bank name that is too long" do
+    bank = Bank.new(name: "Bank with an extremely long bank name that exceeds the allowed 50 characters")
     expect(bank).not_to be_valid
   end
 end
