@@ -3,8 +3,7 @@
 <%= render @bank %>
 
 <div>
-  <%= link_to "Edit this bank", edit_bank_path(@bank) %> |
-  <%= link_to "Back to banks", banks_path %>
-
-  <%= button_to "Destroy this bank", @bank, method: :delete %>
+  <%= link_to t('banks.show.back_to_banks'), banks_path(locale: I18n.locale) %> |
+  <%= link_to t('banks.edit.edit_this_bank'), edit_bank_path(@bank, locale: I18n.locale) %> |
+  <%= button_to t('banks.form.destroy_this_bank'), bank_path(@bank, locale: I18n.locale), method: :delete %>
 </div>

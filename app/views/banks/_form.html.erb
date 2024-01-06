@@ -1,7 +1,7 @@
-<%= form_with(model: bank) do |form| %>
+<%= form_with(model: bank, local: true, url: bank.persisted? ? bank_path(bank, locale: I18n.locale) : banks_path(locale: I18n.locale), method: bank.persisted? ? :patch : :post) do |form| %>
   <% if bank.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
+      <h2><%= t('banks.form.errors', count: bank.errors.count) %></h2>
 
       <ul>
         <% bank.errors.each do |error| %>
@@ -12,11 +12,11 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name, t('banks.form.name_label', default: 'Name'), style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit t('banks.form.create_bank_button', default: 'Create Bank') %>
   </div>
 <% end %>

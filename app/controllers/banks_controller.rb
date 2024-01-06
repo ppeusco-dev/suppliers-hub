@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class BanksController < ApplicationController
-  before_action :set_bank, only: %i[ show edit update destroy ]
+  before_action :set_bank, only: %i[show edit update destroy]
+  before_action :set_locale
 
   # GET /banks or /banks.json
   def index
@@ -7,8 +10,7 @@ class BanksController < ApplicationController
   end
 
   # GET /banks/1 or /banks/1.json
-  def show
-  end
+  def show; end
 
   # GET /banks/new
   def new
@@ -16,8 +18,7 @@ class BanksController < ApplicationController
   end
 
   # GET /banks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /banks or /banks.json
   def create
@@ -25,7 +26,9 @@ class BanksController < ApplicationController
 
     respond_to do |format|
       if @bank.save
-        format.html { redirect_to bank_url(@bank), notice: "Bank was successfully created." }
+        format.html do
+          redirect_to bank_url(@bank, locale: I18n.locale), notice: t('banks.form.success_messages.create')
+        end
         format.json { render :show, status: :created, location: @bank }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,8 +41,10 @@ class BanksController < ApplicationController
   def update
     respond_to do |format|
       if @bank.update(bank_params)
-        format.html { redirect_to bank_url(@bank), notice: "Bank was successfully updated." }
-        format.json { render :show, status: :ok, location: @bank }
+        format.html do
+          redirect_to bank_url(@bank, locale: I18n.locale), notice: t('banks.form.success_messages.update')
+        end
+        format.json { render :show, status: :created, location: @bank }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @bank.errors, status: :unprocessable_entity }
@@ -52,19 +57,24 @@ class BanksController < ApplicationController
     @bank.destroy!
 
     respond_to do |format|
-      format.html { redirect_to banks_url, notice: "Bank was successfully destroyed." }
+      format.html { redirect_to banks_url, notice: t('banks.form.destroy_success') }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bank
-      @bank = Bank.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def bank_params
-      params.require(:bank).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bank
+    @bank = Bank.find(params[:id])
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  # Only allow a list of trusted parameters through.
+  def bank_params
+    params.require(:bank).permit(:name)
+  end
 end
