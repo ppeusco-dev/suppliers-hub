@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t('banks.title') %></h1>
+
+<div id="banks">
+  <% @banks.each do |bank| %>
+    <%= render bank %>
+    <p>
+      <%= link_to t('banks.show_bank'), bank_path(bank, locale: I18n.locale) %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to t('banks.new_bank'), new_bank_path(locale: I18n.locale) %>
