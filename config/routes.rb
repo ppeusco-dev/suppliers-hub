@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :suppliers
   devise_for :users
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     resources :banks

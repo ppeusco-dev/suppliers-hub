@@ -17,8 +17,6 @@ en:
     form:
       errors: "%{count} errors prohibited this bank from being saved"
       name_label: "Name"
-      create_bank_button: "Save Bank"
-      destroy_this_bank: "Delete this bank"
       success_messages:
         create: "Bank was successfully created"
         update: "The bank was successfully updated"
