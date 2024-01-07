@@ -1,6 +1,13 @@
+<!-- _bank.html.erb -->
+
 <div id="<%= dom_id bank %>">
   <p>
     <strong><%= t('banks.show.name_label') %></strong>
     <%= bank.name %>
   </p>
+  <!-- Agregar enlace a la acción edit del banco -->
+  <%= link_to t('shared.links.edit'), edit_bank_path(bank, locale: I18n.locale) %>
+  <!-- Agregar enlace a la acción destroy del banco -->
+  <%= link_to t('shared.links.destroy'), bank_path(bank, locale: I18n.locale),
+              method: :delete, data: { confirm: t('shared.confirmation') } %>
 </div>

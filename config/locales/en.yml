@@ -1,4 +1,13 @@
 en:
+  shared:
+    links:
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+    confirmations:
+      confirm: "Are you sure?"
+    buttons:
+      save: "Save"
   banks:
     title: "Banks"
     show_bank: "See this bank"

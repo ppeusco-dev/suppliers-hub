@@ -1,15 +1,21 @@
 es:
+  shared:
+    links:
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Borrar"
+    buttons:
+      save: "Guardar"
+    confirmations:
+      confirm: "Estas seguro?"
   banks:
     title: "Bancos"
-    show_bank: "Ver este banco"
     new_bank: "Nuevo banco"
     new_bank_title: "Nuevo banco"
     back_to_banks: "Volver a bancos"
     form:
       errors: "%{count} errores prohibieron que este banco se guardara"
       name_label: "Nombre"
-      create_bank_button: "Guardar Banco"
-      destroy_this_bank: "Eliminar este banco"
       success_messages:
         create: "El banco fue creado exitosamente!."
         update: "El banco fue actualizado exitosamente!."
