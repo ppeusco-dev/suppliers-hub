@@ -1,13 +1,21 @@
 <!-- _bank.html.erb -->
 
-<div id="<%= dom_id bank %>">
-  <p>
-    <strong><%= t('shared.labels.name') %></strong>
+<div id="<%= dom_id bank %>" class="flex items-center border-b-2 mb-4 pb-4" >
+  <p class="text-lg font-bold mb-2 flex-1">
+    
     <%= bank.name %>
   </p>
-  <!-- Agregar enlace a la acción edit del banco -->
-  <%= link_to t('shared.links.edit'), edit_bank_path(bank, locale: I18n.locale) %>
-  <!-- Agregar enlace a la acción destroy del banco -->
-  <%= link_to t('shared.links.destroy'), bank_path(bank, locale: I18n.locale),
-              method: :delete, data: { confirm: t('shared.confirmation') } %>
+  <div class="flex space-x-2">
+    <!-- Botón de editar con ícono de lápiz -->
+    <%= link_to edit_bank_path(bank, locale: I18n.locale), class: "flex items-center text-blue-500" do %>
+      <svg class="w-4 h-4 mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.08 2.47a1 1 0 0 0-1.41 0L2 13.54V15h1.46l10.06-10.06a1 1 0 0 0 0-1.41zM13 7.54L7.45 13H13V7.54z"/></svg>
+      <%= t('shared.links.edit') %>
+    <% end %>
+    <!-- Botón de borrar con ícono de papelera -->
+    <%= link_to bank_path(bank, locale: I18n.locale),
+                method: :delete, data: { confirm: t('shared.confirmation') }, class: "flex items-center text-red-500" do %>
+      <svg class="w-4 h-4 mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.464 3.636a8 8 0 1 0-9.192 9.192A8 8 0 0 0 11.464 3.636zM2 8a6 6 0 1 1 12 0 6 6 0 0 1-12 0z"/></svg>
+      <%= t('shared.links.destroy') %>
+    <% end %>
+  </div>
 </div>

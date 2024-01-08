@@ -53,6 +53,7 @@ class BanksController < ApplicationController
 
   # DELETE /banks/1 or /banks/1.json
   def destroy
+    debugger
     @bank.destroy!
 
     respond_to do |format|

@@ -1,8 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<p class="text-green-500"><%= notice %></p>
 
-<h1><%= t('banks.title') %></h1>
-
-<%= link_to t('banks.new_bank'), new_bank_path(locale: I18n.locale) %>
-
-<%= render partial: 'bank', collection: @banks %> <!-- Renderizar el partial para cada banco en @banks -->
+<div class="container mx-auto" style="max-width: 80%;">
+  <div class="flex justify-between items-center mb-4">
+    <h1 class="text-3xl font-bold p-2"> <%= t('banks.title') %></h1>
+    <%= link_to t('banks.new_bank'), new_bank_path(locale: I18n.locale), class: "bg-blue-500 text-white py-2 px-4 rounded" %>
+  </div>
+  <span class="flex items-center border-b-2 mb-4 pb-4"><strong><%= t('shared.labels.name') %></strong></span>
+  <%= render partial: 'bank', collection: @banks %>
+</div>
 
