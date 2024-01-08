@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>SuppliersHub</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Aplicación Rails</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+    <%= javascript_importmap_tags %>
+</head>
+<body class="font-sans bg-gray-100">
+  <%= render partial: 'layouts/components/header' %>
+  <div class="flex flex-col md:flex-row">
+    <%= render partial: 'layouts/components/sidebar' %>
+    <div class="w-full">
+      <%= yield %>
+    </div>
+    <%= render partial: 'layouts/components/footer' %>
+  </div>
 </html>

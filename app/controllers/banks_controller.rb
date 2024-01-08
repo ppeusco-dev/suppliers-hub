@@ -2,7 +2,6 @@
 
 class BanksController < ApplicationController
   before_action :set_bank, only: %i[show edit update destroy]
-  before_action :set_locale
 
   # GET /banks or /banks.json
   def index
@@ -54,6 +53,7 @@ class BanksController < ApplicationController
 
   # DELETE /banks/1 or /banks/1.json
   def destroy
+    debugger
     @bank.destroy!
 
     respond_to do |format|
@@ -67,10 +67,6 @@ class BanksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_bank
     @bank = Bank.find(params[:id])
-  end
-
-  def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
   end
 
   # Only allow a list of trusted parameters through.
