@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :banks
     resources :suppliers
     root 'suppliers#index'
+    get '/dashboard', to: 'dashboard#show'
   end
 
   get 'up' => 'rails/health#show', as: :rails_health_check
