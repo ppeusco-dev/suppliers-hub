@@ -1,5 +1,7 @@
 es:
   shared:
+    labels:
+      name: "Nombre"
     links:
       show: "Mostrar"
       edit: "Editar"
@@ -26,8 +28,22 @@ es:
     edit:
       title: "Editar banco"
       back_to_banks: "Volver a la lista de bancos"
-      update_button: "Actualizar Banco"
-      edit_this_bank: "Editar este banco"
+  suppliers:
+    title: "Proveedores"
+    new_supplier: "Nuevo proveedor"
+    labels:
+      nit: "NIT"
+      contact_person_name: "Nombre de contacto"
+      contact_person_phone: "Telefono de contacto"
+      bank_id: "Banco (id)"
+      bank_name: "Banco (nombre)"
+      bank_account_number: "Número de cuenta"
+    edit:
+      title: "Editar proveedor"
+    links:
+      back_to_suppliers: "Volver a la lista de proveedores"
+       
+
   activerecord:
     attributes:
       bank:

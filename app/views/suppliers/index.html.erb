@@ -1,14 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Suppliers</h1>
+<h1><%= t('suppliers.title') %></h1>
 
-<div id="suppliers">
-  <% @suppliers.each do |supplier| %>
-    <%= render supplier %>
-    <p>
-      <%= link_to "Show this supplier", supplier %>
-    </p>
-  <% end %>
-</div>
+<%= link_to t('suppliers.new_supplier'), new_supplier_path(locale: I18n.locale) %>
 
-<%= link_to "New supplier", new_supplier_path %>
+<%= render partial: 'supplier', collection: @suppliers %>

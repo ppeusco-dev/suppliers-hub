@@ -1,5 +1,7 @@
 en:
   shared:
+    labels:
+      name: "Name"
     links:
       show: "Show"
       edit: "Edit"
@@ -27,8 +29,20 @@ en:
     edit:
       title: "Edit bank"
       back_to_banks: "Back to the list of banks"
-      update_button: "Update Bank"
-      edit_this_bank: "Edit this bank"
+  suppliers:
+    title: "Suppliers"
+    new_supplier: "New supplier"
+    labels:
+      nit: "NIT"
+      contact_person_name: "Contact person name"
+      contact_person_phone: "Contact person phone"
+      bank_id: "Bank (id)"
+      bank_name: "Bank (name)"
+      bank_account_number: "Bank account number"
+    edit:
+      title: "Edit suppliers"
+    links:
+      back_to_suppliers: "Back to the list of suppliers"
   activerecord:
     attributes:
       bank:
