@@ -1,0 +1,7 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t('suppliers.title') %></h1>
+
+<%= link_to t('suppliers.new_supplier'), new_supplier_path(locale: I18n.locale) %>
+
+<%= render partial: 'supplier', collection: @suppliers %>

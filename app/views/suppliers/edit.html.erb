@@ -1,0 +1,9 @@
+<h1><%= t('suppliers.edit.title') %></h1>
+
+<%= render "form", supplier: @supplier %>
+
+<br>
+
+<div>
+  <%= link_to t('suppliers.links.back_to_suppliers'), suppliers_path(locale: I18n.locale) %>
+</div>

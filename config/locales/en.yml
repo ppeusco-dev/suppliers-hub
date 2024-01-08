@@ -1,4 +1,15 @@
 en:
+  shared:
+    labels:
+      name: "Name"
+    links:
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+    confirmations:
+      confirm: "Are you sure?"
+    buttons:
+      save: "Save"
   banks:
     title: "Banks"
     show_bank: "See this bank"
@@ -8,8 +19,6 @@ en:
     form:
       errors: "%{count} errors prohibited this bank from being saved"
       name_label: "Name"
-      create_bank_button: "Save Bank"
-      destroy_this_bank: "Delete this bank"
       success_messages:
         create: "Bank was successfully created"
         update: "The bank was successfully updated"
@@ -20,8 +29,20 @@ en:
     edit:
       title: "Edit bank"
       back_to_banks: "Back to the list of banks"
-      update_button: "Update Bank"
-      edit_this_bank: "Edit this bank"
+  suppliers:
+    title: "Suppliers"
+    new_supplier: "New supplier"
+    labels:
+      nit: "NIT"
+      contact_person_name: "Contact person name"
+      contact_person_phone: "Contact person phone"
+      bank_id: "Bank (id)"
+      bank_name: "Bank (name)"
+      bank_account_number: "Bank account number"
+    edit:
+      title: "Edit suppliers"
+    links:
+      back_to_suppliers: "Back to the list of suppliers"
   activerecord:
     attributes:
       bank:

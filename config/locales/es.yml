@@ -1,15 +1,23 @@
 es:
+  shared:
+    labels:
+      name: "Nombre"
+    links:
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Borrar"
+    buttons:
+      save: "Guardar"
+    confirmations:
+      confirm: "Estas seguro?"
   banks:
     title: "Bancos"
-    show_bank: "Ver este banco"
     new_bank: "Nuevo banco"
     new_bank_title: "Nuevo banco"
     back_to_banks: "Volver a bancos"
     form:
       errors: "%{count} errores prohibieron que este banco se guardara"
       name_label: "Nombre"
-      create_bank_button: "Guardar Banco"
-      destroy_this_bank: "Eliminar este banco"
       success_messages:
         create: "El banco fue creado exitosamente!."
         update: "El banco fue actualizado exitosamente!."
@@ -20,8 +28,22 @@ es:
     edit:
       title: "Editar banco"
       back_to_banks: "Volver a la lista de bancos"
-      update_button: "Actualizar Banco"
-      edit_this_bank: "Editar este banco"
+  suppliers:
+    title: "Proveedores"
+    new_supplier: "Nuevo proveedor"
+    labels:
+      nit: "NIT"
+      contact_person_name: "Nombre de contacto"
+      contact_person_phone: "Telefono de contacto"
+      bank_id: "Banco (id)"
+      bank_name: "Banco (nombre)"
+      bank_account_number: "Número de cuenta"
+    edit:
+      title: "Editar proveedor"
+    links:
+      back_to_suppliers: "Volver a la lista de proveedores"
+       
+
   activerecord:
     attributes:
       bank:
