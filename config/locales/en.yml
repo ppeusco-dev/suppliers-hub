@@ -10,6 +10,11 @@ en:
       confirm: "Are you sure?"
     buttons:
       save: "Save"
+    layout:
+      sidebar:
+        dashboard: "Dashboard"
+        bank: "Bancos"
+        supplier: "Proveedores"
   banks:
     title: "Banks"
     show_bank: "See this bank"

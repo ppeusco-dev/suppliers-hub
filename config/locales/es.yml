@@ -8,6 +8,11 @@ es:
       destroy: "Borrar"
     buttons:
       save: "Guardar"
+    layout:
+      sidebar:
+        dashboard: "Dashboard"
+        bank: "Banks"
+        supplier: "Suppliers"
     confirmations:
       confirm: "Estas seguro?"
   banks:
