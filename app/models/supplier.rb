@@ -1,4 +1,7 @@
+
 class Supplier < ApplicationRecord
+  include WillPaginate::CollectionMethods
+
   belongs_to :bank
 
   validates :name, presence: true, length: { maximum: 255 }

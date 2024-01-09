@@ -6,7 +6,7 @@ class BanksController < ApplicationController
 
   # GET /banks or /banks.json
   def index
-    @banks = Bank.all
+    @banks = Bank.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /banks/1 or /banks/1.json
