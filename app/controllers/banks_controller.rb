@@ -2,6 +2,7 @@
 
 class BanksController < ApplicationController
   before_action :set_bank, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /banks or /banks.json
   def index
@@ -53,7 +54,6 @@ class BanksController < ApplicationController
 
   # DELETE /banks/1 or /banks/1.json
   def destroy
-    debugger
     @bank.destroy!
 
     respond_to do |format|
