@@ -1,42 +1,18 @@
-<div id="<%= dom_id supplier %>">
-  <p>
-    <strong><%= t('shared.labels.name') %>:</strong>
-    <%= supplier.name %>
-  </p>
+<tr>
+  <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.name %></td>
+  <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.contact_person_name %></td>
+  <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.contact_person_phone %></td>
+  <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.bank.name %></td>
+  <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.bank_account_number %></td>
 
-  <p>
-    <strong><%= t('suppliers.labels.nit') %>:</strong>
-    <%= supplier.nit %>
-  </p>
+  <td class="p-4 text-sm leading-4 text-right border-b border-gray-200">
+    <%= link_to edit_supplier_path(supplier, locale: I18n.locale), class: "inline-block ml-auto px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700" do %>
+      <%= t('shared.links.edit') %>
+    <% end %>
 
-  <p>
-    <strong><%= t('suppliers.labels.contact_person_name') %>:</strong>
-    <%= supplier.contact_person_name %>
-  </p>
-
-  <p>
-    <strong><%= t('suppliers.labels.contact_person_phone') %>:</strong>
-    <%= supplier.contact_person_phone %>
-  </p>
-
-  <p>
-    <strong><%= t('suppliers.labels.bank_id') %>:</strong>
-    <%= supplier.bank_id %>
-  </p>
-
-  <p>
-    <strong><%= t('suppliers.labels.bank_name') %>:</strong>
-    <%= supplier.bank.name %>
-  </p>
-
-  <p>
-    <strong><%= t('suppliers.labels.bank_account_number') %></strong>
-    <%= supplier.bank_account_number %>
-  </p>
-
-  <!-- Agregar enlace a la acción edit del banco -->
-  <%= link_to t('shared.links.edit'), edit_supplier_path(supplier, locale: I18n.locale) %>
-  <!-- Agregar enlace a la acción destroy del banco -->
-  <%= link_to t('shared.links.destroy'), supplier_path(supplier, locale: I18n.locale),
-              method: :delete, data: { confirm: t('shared.confirmation') } %>
-</div>
+    <%= link_to supplier_path(supplier, locale: I18n.locale),
+                method: :delete, data: { confirm: t('shared.confirmation') }, class: "inline-block ml-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700" do %>
+      <%= t('shared.links.destroy') %>
+    <% end %>
+  </td>
+</tr>
