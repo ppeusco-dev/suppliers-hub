@@ -6,6 +6,13 @@
           <span class="text-xl pl-2">Suppliers Hub</span>
         </a>
       </div>
+      <!-- Nuevo contenido para el extremo derecho -->
+      <div class="flex items-center">
+        <% if user_signed_in? %>
+          <span class="text-white mr-4"><%= current_user.email %></span>
+          <%= button_to t('layout.header.sign_out'), destroy_user_session_path, method: :delete, class: "text-white" %>
+        <% end %>
+      </div>
     </div>
   </nav>
 </header>

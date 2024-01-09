@@ -2,6 +2,7 @@
 
 class BanksController < ApplicationController
   before_action :set_bank, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /banks or /banks.json
   def index

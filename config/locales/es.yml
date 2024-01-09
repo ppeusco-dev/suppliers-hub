@@ -13,6 +13,8 @@ es:
         dashboard: "Dashboard"
         bank: "Banks"
         supplier: "Suppliers"
+      header:
+        sign_out: "Salir"
     confirmations:
       confirm: "Estas seguro?"
   banks:
