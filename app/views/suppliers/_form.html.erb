@@ -33,7 +33,7 @@
 
   <div>
     <%= form.label :bank_id, t('suppliers.labels.bank_name'), style: "display: block" %>
-    <%= form.collection_select :bank_id, Bank.all, :id, :name, prompt: "Select a bank" %>
+    <%= form.collection_select :bank_id, banks_for_select, :id, :name, prompt: "Select a bank" %>
   </div>
 
   <div>

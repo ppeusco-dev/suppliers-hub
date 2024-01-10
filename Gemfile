@@ -81,3 +81,5 @@ gem "tailwindcss-rails", "~> 2.2"
 gem "foreman", "~> 0.87.2"
 
 gem "will_paginate", "~> 4.0"
+
+gem "bullet", "~> 7.1"
