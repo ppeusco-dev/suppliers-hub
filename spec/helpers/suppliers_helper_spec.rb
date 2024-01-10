@@ -1,15 +1,17 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the SuppliersHelper. For example:
-#
-# describe SuppliersHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe SuppliersHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#display_info' do
+    it 'returns the value if attribute is in the whitelist and value is present' do
+      expect(helper.display_info(:nit, '123')).to eq('123')
+    end
+
+    it 'returns "Sin información en la tabla" if attribute is not in the whitelist' do
+      expect(helper.display_info(:invalid_attribute, '123')).to eq('Sin información en la tabla')
+    end
+
+    it 'returns "Sin información en la tabla" if value is not present' do
+      expect(helper.display_info(:nit, nil)).to eq('Sin información en la tabla')
+    end
+  end
 end
