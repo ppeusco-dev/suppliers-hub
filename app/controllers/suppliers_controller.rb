@@ -4,7 +4,10 @@ class SuppliersController < ApplicationController
 
   # GET /suppliers or /suppliers.json
   def index
-    @suppliers = Supplier.paginate(page: params[:page], per_page: 10)
+    @suppliers = Supplier.joins(:bank)
+                         .select('suppliers.*, banks.name AS bank_name, banks.id AS bank_id')
+                         .paginate(page: params[:page], per_page: 10)
+
   end
 
   # GET /suppliers/1 or /suppliers/1.json
