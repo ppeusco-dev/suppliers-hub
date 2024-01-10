@@ -2,7 +2,7 @@
   <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.name %></td>
   <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.contact_person_name %></td>
   <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.contact_person_phone %></td>
-  <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.bank.name %></td>
+  <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= bank_name_for_supplier(supplier) %></td>
   <td class="p-4 text-lg leading-6 text-left text-gray-800 font-semibold border-b border-gray-200"><%= supplier.bank_account_number %></td>
 
   <td class="p-4 text-sm leading-4 text-right border-b border-gray-200">

@@ -15,7 +15,7 @@
         <strong><%= t('suppliers.labels.contact_person_phone') %>:</strong> <%= @supplier.contact_person_phone %>
       </div>
       <div class="mb-4">
-        <strong><%= t('suppliers.labels.bank_name') %>:</strong> <%= @supplier.bank.name %>
+        <strong><%= t('suppliers.labels.bank_name') %>:</strong> <%= bank_name_for_supplier(@supplier) %>
       </div>
       <div class="mb-4">
         <strong><%= t('suppliers.labels.bank_account_number') %>:</strong> <%= @supplier.bank_account_number %>

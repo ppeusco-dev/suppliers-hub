@@ -11,12 +11,12 @@ module ApplicationHelper
   end
 
   def form_url_and_method(object)
-    object_type = object.class.to_s.downcase.pluralize
-
+    object_type = object.class.to_s.downcase
+  
     if object.persisted?
       { url: send("#{object_type}_path", object, locale: I18n.locale), method: :patch }
     else
-      { url: send("#{object_type}_path", locale: I18n.locale), method: :post }
+      { url: send("#{object_type.pluralize}_path", locale: I18n.locale), method: :post }
     end
   end
 end
