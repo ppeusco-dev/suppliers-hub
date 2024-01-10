@@ -1,4 +1,4 @@
-<%= form_with(model: bank, local: true, **bank_form_url_and_method(bank)) do |form| %>
+<%= form_with(model: bank, local: true, **form_url_and_method(bank)) do |form| %>
   <% if bank.errors.any? %>
     <div class="text-red-500 mt-4">
       <h2 class="font-semibold"><%= t('banks.form.errors', count: bank.errors.count) %></h2>

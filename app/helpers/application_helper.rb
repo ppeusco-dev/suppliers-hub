@@ -9,4 +9,14 @@ module ApplicationHelper
       concat button_to(t('layout.header.sign_out'), destroy_user_session_path, method: :delete, class: "text-white")
     end
   end
+
+  def form_url_and_method(object)
+    object_type = object.class.to_s.downcase.pluralize
+
+    if object.persisted?
+      { url: send("#{object_type}_path", object, locale: I18n.locale), method: :patch }
+    else
+      { url: send("#{object_type}_path", locale: I18n.locale), method: :post }
+    end
+  end
 end
